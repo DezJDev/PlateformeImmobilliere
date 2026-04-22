@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+    /* mappe font-sans -> Roboto ; optionnel : font-display -> Oswald */
+    --font-sans: var(--font-roboto);
+    --font-display: var(--font-oswald);
+
+    --color-primary: #091d35;
+    --color-secondary: #f96f6c;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+}
+
+@utility font-roboto {
+  font-family: var(--font-roboto);
+}
+
+@utility font-oswald {
+  font-family: var(--font-oswald);
+}
+
+@utility font-roboto-thin {
+  font-family: var(--font-roboto-thin);
+  font-weight: 100;
+}
+
+:root {
+    --font-roboto-thin: "Roboto Thin", "Roboto", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+    --font-oswald: "Oswald", sans-serif;
+}
+
+body {
+    font-size: var(--text-base);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
